@@ -1,0 +1,209 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    min-height: calc(100vh - 112px);
+    margin: 0;
+}
+
+.alert {
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto !important;
+}
+
+.hero {
+    height: calc(100vh - 55px);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/scaloneta.jpg');
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+.hero__title {
+    color: rgb(79, 166, 224);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: white 2px 2px;
+}
+
+.prode {
+    padding: 4rem 0;
+    background-color: rgb(238, 238, 238);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+.img-prode {
+    display: block;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.videos {
+    padding: 4rem 0.25rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/cesped.jpg');
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+iframe {
+    max-width: 100%;
+    box-shadow: 0 0 5px 5px white;
+    text-align: center;
+    display: block;
+    margin: 3rem auto;
+}
+
+.prode-container {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fill, 480px);
+}
+
+.group {
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.group-name {
+    font-size: 2em;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #888;
+}
+
+.countries {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #888;
+}
+
+.matches {
+    padding: 0.5em;
+}
+
+.match {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50px 1fr 31px 2ch 31px 1fr 50px;
+    padding: 0.25em 0;
+}
+
+.goals {
+    width: 3ch;
+    text-align: center;
+}
+
+.rules-container {
+    max-width: 660px;
+}
+
+.image-container {
+    position: relative;
+    isolation: isolate;
+    min-height: calc(100vh - 112px);
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.prode-image-container {
+    --bg-show-image: url('/img/camiseta.jpg');
+    --bg-show-image-opacity: 0.3;     
+}
+
+.prode-image-container::after {
+    opacity: var(--bg-show-image-opacity);
+    background-image: var(--bg-show-image);
+}
+
+.standings-rules-image-container {
+    --bg-standings-image: url('/img/messi.jpeg');
+    --bg-standings-image-opacity: 0.1;
+}
+
+.standings-rules-image-container::after {
+    opacity: var(--bg-standings-image-opacity);
+    background-image: var(--bg-standings-image);
+}
+
+.user-image-container {
+    height: calc(100vh - 112px);
+    --bg-standings-image: url('/img/messi-depaul.jpg');
+    --bg-standings-image-opacity: 0.4;
+}
+
+.user-image-container::after {
+    opacity: var(--bg-standings-image-opacity);
+    background-image: var(--bg-standings-image);
+}
+
+@media (max-width: 500px) {
+    .prode-container {
+        grid-template-columns: 380px;
+    }
+
+    .header {
+        font-size: 0.8rem;
+    }
+
+    .match {
+        font-size: 0.8rem;
+        grid-template-columns: 40px 1fr 25px 2ch 25px 1fr 40px;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .prode-container {
+        grid-template-columns: 320px;
+    }
+
+    .header {
+        font-size: 0.7rem;
+    }
+
+    .match {
+        font-size: 0.7rem;
+        grid-template-columns: 30px 1fr 20px 2ch 20px 1fr 30px;
+    }
+
+    .table {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 325px) {
+    .navbar-container {
+        padding: 0 8px;
+    }
+}

@@ -1,0 +1,51 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="image-container standings-rules-image-container">
+
+    <% if (success && success.length) { %>
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+    
+    <% if (error && error.length) { %>
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <%= error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+
+    <div class="container py-5">
+        <h1 class="text-center mb-3">Posiciones</h1>
+    
+        <% if (currentUser) { %>           
+            <div class="mb-3 text-center">
+                <a href="#currentPosition" class="btn btn-sm btn-outline-primary">Ir a mi posición</a>
+            </div>
+        <% } %>
+    
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Participante</th>
+                <th scope="col">Puntos</th>
+                <th scope="col">Prode</th>
+            </tr>
+            </thead>
+            <tbody>
+                <% for (let user of users) { %>
+                    <tr class="<%= currentUser && currentUser.username === user.username ? 'table-active' : '' %>" id="<%= currentUser && currentUser.username === user.username ? 'currentPosition' : '' %>">
+                        <th scope="row"><%= user.position %></th>
+                        <td><%= user.username %></td>
+                        <td><%= user.score %> pts</td>
+                        <td><a href="/participantes/<%= user._id %>">Ver prode</a></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

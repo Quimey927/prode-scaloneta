@@ -1,0 +1,36 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="image-container user-image-container">
+
+    <% if (success && success.length) { %>
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+
+    <% if (error && error.length) { %>
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <%= error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+
+    <div class="container py-5 text-center">
+
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <div class="mb-3">
+                <label for="username">Participante: </label>
+                <input type="text" id="username" name="username" autofocus required>
+            </div>
+            <div class="mb-3">
+                <label for="password">Contraseña: </label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="btn btn-success">Login</button>
+        </form>
+
+    </div>
+
+</div>

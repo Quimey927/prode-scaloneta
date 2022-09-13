@@ -1,0 +1,583 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="image-container prode-image-container">
+
+    <% if (success && success.length) { %>
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            <%= success %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+    
+    <% if (error && error.length) { %>
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <%= error %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% } %>
+
+    <div class="container py-5 text-center">
+        <h1 class="text-center">Prode de <%= user.username %></h1>
+        
+        <% if (currentUser && user._id.equals(currentUser._id)) { %>
+            <div class="mb-3">
+                <a class="btn btn-outline-primary btn-sm" href="/posiciones">Posiciones</a>
+            </div>
+            <div class="mb-3">
+                <a class="btn btn-primary" href="/participantes/<%= user._id %>/editar">Editar Prode</a>
+            </div>
+            <% } else { %>
+                <div class="mb-3">
+                    <a class="btn btn-outline-primary btn-sm" href="/posiciones">Atrás</a>
+                </div>
+            <% } %>
+        
+        <div class="prode-container">
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo A</div>
+                    <div class="countries">
+                        <div class="country">Qatar</div>
+                        <div class="country">Ecuador</div>
+                        <div class="country">Senegal</div>
+                        <div class="country">Países Bajos</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
+                        <span>Qatar</span>
+                        <span><%= user.results[0] %></span>
+                        <span>-</span>
+                        <span><%= user.results[1] %></span>
+                        <span>Ecuador</span>
+                        <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
+                        <span>Senegal</span>
+                        <span><%= user.results[2] %></span>
+                        <span>-</span>
+                        <span><%= user.results[3] %></span>
+                        <span>Países Bajos</span>
+                        <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
+                        <span>Qatar</span>
+                        <span><%= user.results[4] %></span>
+                        <span>-</span>
+                        <span><%= user.results[5] %></span>
+                        <span>Senegal</span>
+                        <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
+                        <span>Países Bajos</span>
+                        <span><%= user.results[6] %></span>
+                        <span>-</span>
+                        <span><%= user.results[7] %></span>
+                        <span>Ecuador</span>
+                        <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
+                        <span>Ecuador</span>
+                        <span><%= user.results[8] %></span>
+                        <span>-</span>
+                        <span><%= user.results[9] %></span>
+                        <span>Senegal</span>
+                        <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
+                        <span>Países Bajos</span>
+                        <span><%= user.results[10] %></span>
+                        <span>-</span>
+                        <span><%= user.results[11] %></span>
+                        <span>Qatar</span>
+                        <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo B</div>
+                    <div class="countries">
+                        <div class="country">Inglaterra</div>
+                        <div class="country">Irán</div>
+                        <div class="country">Estados Unidos</div>
+                        <div class="country">Gales</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
+                        <span>Inglaterra</span>
+                        <span><%= user.results[12] %></span>
+                        <span>-</span>
+                        <span><%= user.results[13] %></span>
+                        <span>Irán</span>
+                        <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                        <span>Estados Unidos</span>
+                        <span><%= user.results[14] %></span>
+                        <span>-</span>
+                        <span><%= user.results[15] %></span>
+                        <span>Gales</span>
+                        <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
+                        <span>Gales</span>
+                        <span><%= user.results[16] %></span>
+                        <span>-</span>
+                        <span><%= user.results[17] %></span>
+                        <span>Irán</span>
+                        <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
+                        <span>Inglaterra</span>
+                        <span><%= user.results[18] %></span>
+                        <span>-</span>
+                        <span><%= user.results[19] %></span>
+                        <span>Estados Unidos</span>
+                        <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
+                        <span>Gales</span>
+                        <span><%= user.results[20] %></span>
+                        <span>-</span>
+                        <span><%= user.results[21] %></span>
+                        <span>Inglaterra</span>
+                        <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
+                        <span>Irán</span>
+                        <span><%= user.results[22] %></span>
+                        <span>-</span>
+                        <span><%= user.results[23] %></span>
+                        <span>Estados Unidos</span>
+                        <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo C</div>
+                    <div class="countries">
+                        <div class="country">Argentina</div>
+                        <div class="country">Arabia Saudita</div>
+                        <div class="country">México</div>
+                        <div class="country">Polonia</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
+                        <span>Argentina</span>
+                        <span><%= user.results[24] %></span>
+                        <span>-</span>
+                        <span><%= user.results[25] %></span>
+                        <span>Arabia Saudita</span>
+                        <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
+                        <span>México</span>
+                        <span><%= user.results[26] %></span>
+                        <span>-</span>
+                        <span><%= user.results[27] %></span>
+                        <span>Polonia</span>
+                        <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
+                        <span>Polonia</span>
+                        <span><%= user.results[28] %></span>
+                        <span>-</span>
+                        <span><%= user.results[29] %></span>
+                        <span>Arabia Saudita</span>
+                        <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
+                        <span>Argentina</span>
+                        <span><%= user.results[30] %></span>
+                        <span>-</span>
+                        <span><%= user.results[31] %></span>
+                        <span>México</span>
+                        <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
+                        <span>Polonia</span>
+                        <span><%= user.results[32] %></span>
+                        <span>-</span>
+                        <span><%= user.results[33] %></span>
+                        <span>Argentina</span>
+                        <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                        <span>Arabia Saudita</span>
+                        <span><%= user.results[34] %></span>
+                        <span>-</span>
+                        <span><%= user.results[35] %></span>
+                        <span>México</span>
+                        <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo D</div>
+                    <div class="countries">
+                        <div class="country">Francia</div>
+                        <div class="country">Australia</div>
+                        <div class="country">Dinamarca</div>
+                        <div class="country">Túnez</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
+                        <span>Dinamarca</span>
+                        <span><%= user.results[36] %></span>
+                        <span>-</span>
+                        <span><%= user.results[37] %></span>
+                        <span>Túnez</span>
+                        <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
+                        <span>Francia</span>
+                        <span><%= user.results[38] %></span>
+                        <span>-</span>
+                        <span><%= user.results[39] %></span>
+                        <span>Australia</span>
+                        <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
+                        <span>Túnez</span>
+                        <span><%= user.results[40] %></span>
+                        <span>-</span>
+                        <span><%= user.results[41] %></span>
+                        <span>Australia</span>
+                        <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
+                        <span>Francia</span>
+                        <span><%= user.results[42] %></span>
+                        <span>-</span>
+                        <span><%= user.results[43] %></span>
+                        <span>Dinamarca</span>
+                        <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
+                        <span>Australia</span>
+                        <span><%= user.results[44] %></span>
+                        <span>-</span>
+                        <span><%= user.results[45] %></span>
+                        <span>Dinamarca</span>
+                        <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
+                        <span>Túnez</span>
+                        <span><%= user.results[46] %></span>
+                        <span>-</span>
+                        <span><%= user.results[47] %></span>
+                        <span>Francia</span>
+                        <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo E</div>
+                    <div class="countries">
+                        <div class="country">España</div>
+                        <div class="country">Costa Rica</div>
+                        <div class="country">Alemania</div>
+                        <div class="country">Japón</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
+                        <span>Alemania</span>
+                        <span><%= user.results[48] %></span>
+                        <span>-</span>
+                        <span><%= user.results[49] %></span>
+                        <span>Japón</span>
+                        <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
+                        <span>España</span>
+                        <span><%= user.results[50] %></span>
+                        <span>-</span>
+                        <span><%= user.results[51] %></span>
+                        <span>Costa Rica</span>
+                        <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
+                        <span>Japón</span>
+                        <span><%= user.results[52] %></span>
+                        <span>-</span>
+                        <span><%= user.results[53] %></span>
+                        <span>Costa Rica</span>
+                        <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
+                        <span>España</span>
+                        <span><%= user.results[54] %></span>
+                        <span>-</span>
+                        <span><%= user.results[55] %></span>
+                        <span>Alemania</span>
+                        <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
+                        <span>Japón</span>
+                        <span><%= user.results[56] %></span>
+                        <span>-</span>
+                        <span><%= user.results[57] %></span>
+                        <span>España</span>
+                        <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
+                        <span>Costa Rica</span>
+                        <span><%= user.results[58] %></span>
+                        <span>-</span>
+                        <span><%= user.results[59] %></span>
+                        <span>Alemania</span>
+                        <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo F</div>
+                    <div class="countries">
+                        <div class="country">Bélgica</div>
+                        <div class="country">Canadá</div>
+                        <div class="country">Marruecos</div>
+                        <div class="country">Croacia</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
+                        <span>Marruecos</span>
+                        <span><%= user.results[60] %></span>
+                        <span>-</span>
+                        <span><%= user.results[61] %></span>
+                        <span>Croacia</span>
+                        <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
+                        <span>Bélgica</span>
+                        <span><%= user.results[62] %></span>
+                        <span>-</span>
+                        <span><%= user.results[63] %></span>
+                        <span>Canadá</span>
+                        <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
+                        <span>Bélgica</span>
+                        <span><%= user.results[64] %></span>
+                        <span>-</span>
+                        <span><%= user.results[65] %></span>
+                        <span>Marruecos</span>
+                        <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
+                        <span>Croacia</span>
+                        <span><%= user.results[66] %></span>
+                        <span>-</span>
+                        <span><%= user.results[67] %></span>
+                        <span>Canadá</span>
+                        <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
+                        <span>Croacia</span>
+                        <span><%= user.results[68] %></span>
+                        <span>-</span>
+                        <span><%= user.results[69] %></span>
+                        <span>Bélgica</span>
+                        <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
+                        <span>Canadá</span>
+                        <span><%= user.results[70] %></span>
+                        <span>-</span>
+                        <span><%= user.results[71] %></span>
+                        <span>Marruecos</span>
+                        <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo G</div>
+                    <div class="countries">
+                        <div class="country">Brasil</div>
+                        <div class="country">Serbia</div>
+                        <div class="country">Suiza</div>
+                        <div class="country">Camerún</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
+                        <span>Suiza</span>
+                        <span><%= user.results[72] %></span>
+                        <span>-</span>
+                        <span><%= user.results[73] %></span>
+                        <span>Camerún</span>
+                        <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
+                        <span>Brasil</span>
+                        <span><%= user.results[74] %></span>
+                        <span>-</span>
+                        <span><%= user.results[75] %></span>
+                        <span>Serbia</span>
+                        <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
+                        <span>Camerún</span>
+                        <span><%= user.results[76] %></span>
+                        <span>-</span>
+                        <span><%= user.results[77] %></span>
+                        <span>Serbia</span>
+                        <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
+                        <span>Brasil</span>
+                        <span><%= user.results[78] %></span>
+                        <span>-</span>
+                        <span><%= user.results[79] %></span>
+                        <span>Suiza</span>
+                        <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
+                        <span>Serbia</span>
+                        <span><%= user.results[80] %></span>
+                        <span>-</span>
+                        <span><%= user.results[81] %></span>
+                        <span>Suiza</span>
+                        <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
+                        <span>Camerún</span>
+                        <span><%= user.results[82] %></span>
+                        <span>-</span>
+                        <span><%= user.results[83] %></span>
+                        <span>Brasil</span>
+                        <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="group">
+                <div class="header">
+                    <div class="group-name">Grupo H</div>
+                    <div class="countries">
+                        <div class="country">Portugal</div>
+                        <div class="country">Ghana</div>
+                        <div class="country">Uruguay</div>
+                        <div class="country">Corea del Sur</div>
+                    </div>
+                </div>
+                <div class="matches">
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
+                        <span>Uruguay</span>
+                        <span><%= user.results[84] %></span>
+                        <span>-</span>
+                        <span><%= user.results[85] %></span>
+                        <span>Corea del Sur</span>
+                        <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
+                        <span>Portugal</span>
+                        <span><%= user.results[86] %></span>
+                        <span>-</span>
+                        <span><%= user.results[87] %></span>
+                        <span>Ghana</span>
+                        <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                        <span>Corea del Sur</span>
+                        <span><%= user.results[88] %></span>
+                        <span>-</span>
+                        <span><%= user.results[89] %></span>
+                        <span>Ghana</span>
+                        <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
+                        <span>Portugal</span>
+                        <span><%= user.results[90] %></span>
+                        <span>-</span>
+                        <span><%= user.results[91] %></span>
+                        <span>Uruguay</span>
+                        <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
+                        <span>Ghana</span>
+                        <span><%= user.results[92] %></span>
+                        <span>-</span>
+                        <span><%= user.results[93] %></span>
+                        <span>Uruguay</span>
+                        <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
+                    </div>
+                    <div class="match">
+                        <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                        <span>Corea del Sur</span>
+                        <span><%= user.results[94] %></span>
+                        <span>-</span>
+                        <span><%= user.results[95] %></span>
+                        <span>Portugal</span>
+                        <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
