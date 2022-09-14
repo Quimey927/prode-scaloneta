@@ -59,7 +59,7 @@ const seedDB = async () => {
 
     const firstName = 'Quimey';
     const lastName = 'Mata';
-    const phone = 3512040133;
+    const phone = 123456;
     const email = 'quimey@quimey';
     const password = 'jhlukhrtjncb';
     const username = 'ProdeOficial';
