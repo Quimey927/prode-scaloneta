@@ -4,12 +4,15 @@
 
     <div class="container py-5 text-center">
         <h1>Editar prode</h1>
+
         <div class="mb-3">
             <a class="btn btn-outline-primary btn-sm" href="/participantes/<%= user._id %>">Atrás</a>
         </div>
+
         <form action="/participantes/<%= user._id %>?_method=put" method="post">
             <button class="btn btn-primary">Guardar cambios</button>
             <div class="prode-container">
+
                 <div class="group">
                     <div class="header">
                         <div class="group-name">Grupo A</div>
@@ -554,6 +557,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="text-center mb-3">
                 <button class="btn btn-primary">Guardar cambios</button>
             </div>

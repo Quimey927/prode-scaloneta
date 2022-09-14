@@ -16,14 +16,14 @@ const userRoutes = require('./routes/users');
 const standingRoutes = require('./routes/standings');
 
 mongoose
-.connect('mongodb://127.0.0.1:27017/prode')
-.then(() => {
-    console.log('Database connected');
-})
-.catch((err) => {
-    console.log('Oh no! Mongo connection error');
-    console.log(err);
-});
+    .connect('mongodb://127.0.0.1:27017/prode')
+    .then(() => {
+        console.log('Database connected');
+    })
+    .catch((err) => {
+        console.log('Oh no! Mongo connection error');
+        console.log(err);
+    });
 
 const app = express();
 
@@ -34,18 +34,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(mongoSanitize({
-      allowDots: true,
-      replaceWith: '_',
-    }),
+
+app.use(
+    mongoSanitize({
+        allowDots: true,
+        replaceWith: '_'
+    })
 );
 
 app.use(
     mongoSanitize({
-      onSanitize: ({ req, key }) => {
-        console.warn(`This request[${key}] is sanitized`, req);
-      },
-    }),
+        onSanitize: ({ req, key }) => {
+            console.warn(`This request[${key}] is sanitized`, req);
+        }
+    })
   );
 
 const sessionConfig = {
@@ -70,7 +72,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
 
 app.use((req, res, next) => {
     res.locals.currentUser = req.user;

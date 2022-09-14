@@ -8,22 +8,15 @@ module.exports.register = async (req, res) => {
     try {
         const { firstName, lastName, phone, username, email, password } = req.body;
         const results = [];
+
         for (let i = 0; i < 96; i++) {
-        results.push('');
+            results.push('');
         }
+
         const puntaje = 0;
         const isAdmin = false;
-        const user = new User({
-        firstName,
-        lastName,
-        phone,
-        email,
-        username,
-        results,
-        puntaje,
-        isAdmin,
-        });
-        const newUser = await User.register(user, password);
+        const user = new User({firstName, lastName, phone, email, username, results, puntaje, isAdmin });
+        await User.register(user, password);
         req.flash('success', 'Participante registrado');
         res.redirect('/posiciones');
     } catch (err) {
@@ -44,7 +37,7 @@ module.exports.login = (req, res) => {
 module.exports.logout = (req, res, next) => {
     req.logout(function (err) {
         if (err) {
-        return next(err);
+            return next(err);
         }
         req.flash('success', '¡Hasta la próxima!');
         res.redirect('/posiciones');

@@ -19,10 +19,12 @@ module.exports.isAdmin = (req, res, next) => {
 module.exports.isAuthor = async (req, res, next) => {
     const { id } = req.params;
     const user = await User.findById(id);
+
     if (!user) {
         req.flash('error', 'No pudimos encontrar este participante');
         return res.redirect('/posiciones');
     }
+    
     if (!user._id.equals(req.user._id)) {
         req.flash('error', 'No tenés permiso para hacer eso');
         return res.redirect(`/participantes/${id}`);
