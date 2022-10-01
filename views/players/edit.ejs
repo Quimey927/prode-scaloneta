@@ -13,6 +13,71 @@
             <button class="btn btn-primary">Guardar cambios</button>
             <div class="prode-container">
 
+                <div class="champion">
+                    <h3>Campeón</h3>
+                    <select class="form-select text-center" name="champion">
+                        <option value="Sin elegir aún">Sin elegir aún</option>
+                        <option value="Alemania">Alemania</option>
+                        <option value="Arabia Saudita">Arabia Saudita</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Bélgica">Bélgica</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Camerún">Camerún</option>
+                        <option value="Canadá">Canadá</option>
+                        <option value="Corea del Sur">Corea del Sur</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Croacia">Croacia</option>
+                        <option value="Dinamarca">Dinamarca</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="España">España</option>
+                        <option value="Estados Unidos">Estados Unidos</option>
+                        <option value="Francia">Francia</option>
+                        <option value="Gales">Gales</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Inglaterra">Inglaterra</option>
+                        <option value="Irán">Irán</option>
+                        <option value="Japón">Japón</option>
+                        <option value="Marruecos">Marruecos</option>
+                        <option value="México">México</option>
+                        <option value="Países Bajos">Países Bajos</option>
+                        <option value="Polonia">Polonia</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Suiza">Suiza</option>
+                        <option value="Túnez">Túnez</option>
+                        <option value="Uruguay">Uruguay</option>
+                    </select>
+                </div>
+                
+                <div class="top-scorer">
+                    <h3>Goleador</h3>
+                    <select class="form-select text-center" name="topScorer">
+                        <option value="Sin elegir aún">Sin elegir aún</option>
+                        <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+                        <option value="Enner Valencia">Enner Valencia</option>
+                        <option value="Ferran Torres">Ferran Torres</option>
+                        <option value="Harry Kane">Harry Kane</option>
+                        <option value="Ivan Perišić">Ivan Perišić</option>
+                        <option value="Karim Benzema">Karim Benzema</option>
+                        <option value="Kevin De Bruyne">Kevin De Bruyne</option>
+                        <option value="Kylian Mbappé">Kylian Mbappé</option>
+                        <option value="Lautaro Martínez">Lautaro Martínez</option>
+                        <option value="Leroy Sané">Leroy Sané</option>
+                        <option value="Lionel Messi">Lionel Messi</option>
+                        <option value="Luis Suárez">Luis Suárez</option>
+                        <option value="Neymar">Neymar</option>
+                        <option value="Raheem Sterling">Raheem Sterling</option>
+                        <option value="Robert Lewandowski">Robert Lewandowski</option>
+                        <option value="Romelu Lukaku">Romelu Lukaku</option>
+                        <option value="Sadio Mané">Sadio Mané</option>
+                        <option value="Vinicius Jr">Vinicius Jr</option>
+                        <option value="Ninguno de estos">Ninguno de estos</option>
+                    </select>
+                </div>
+
                 <div class="group">
                     <div class="header">
                         <div class="group-name">Grupo A</div>
@@ -565,3 +630,15 @@
     </div>
 
 </div>
+
+<script>
+    const user = <%- JSON.stringify(user) %>
+
+    const championDiv = document.querySelector('.champion');
+    const champion = championDiv.querySelector(`option[value='${user.champion}']`);
+    champion.setAttribute('selected', true);
+
+    const topScorerDiv = document.querySelector('.top-scorer');
+    const topScorer = topScorerDiv.querySelector(`option[value='${user.topScorer}']`);
+    topScorer.setAttribute('selected', true);
+</script>

@@ -12,6 +12,8 @@ const userSchema = new Schema({
     unique: true,
   },
   results: [Number],
+  topScorer: String,
+  champion: String,
   score: Number,
   isAdmin: Boolean,
 });

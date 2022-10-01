@@ -5,6 +5,8 @@ module.exports.standings = async (req, res) => {
     const prodeOficial = await User.findOne({ username: 'ProdeOficial' });
     const winnerGuess = 4;
     const exactResult = 3;
+    const championGuess = 7;
+    const topScorerGuess = 5;
 
     for (let user of users) {
         user.score = 0;
@@ -20,6 +22,19 @@ module.exports.standings = async (req, res) => {
                 }
             }
         }
+
+        if (user.champion !== 'Sin elegir aún' && prodeOficial.champion !== 'Sin elegir aún') {
+            if (user.champion === prodeOficial.champion) {
+                user.score += championGuess;
+            }
+        }
+
+        if (user.topScorer !== 'Sin elegir aún' && prodeOficial.topScorer !== 'Sin elegir aún') {
+            if (user.topScorer === prodeOficial.topScorer) {
+                user.score += topScorerGuess;
+            }
+        }
+
         await user.save();
     }
 

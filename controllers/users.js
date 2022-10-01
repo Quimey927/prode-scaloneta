@@ -13,9 +13,11 @@ module.exports.register = async (req, res) => {
             results.push('');
         }
 
-        const puntaje = 0;
+        const score = 0;
+        const topScorer = 'Sin elegir aún';
+        const champion = 'Sin elegir aún';
         const isAdmin = false;
-        const user = new User({firstName, lastName, phone, email, username, results, puntaje, isAdmin });
+        const user = new User({firstName, lastName, phone, email, username, results, score, topScorer, champion, isAdmin });
         await User.register(user, password);
         req.flash('success', 'Participante registrado');
         res.redirect('/posiciones');
