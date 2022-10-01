@@ -3,6 +3,7 @@ const User = require('../models/user');
 module.exports.standings = async (req, res) => {
     const users = await User.find({ username: { $ne: 'ProdeOficial' } });
     const prodeOficial = await User.findOne({ username: 'ProdeOficial' });
+    
     const winnerGuess = 4;
     const exactResult = 3;
     const championGuess = 7;
@@ -45,12 +46,18 @@ module.exports.standings = async (req, res) => {
     let currentScore = users[0].score;
     
     for (let user of users) {
-        user.score === currentScore ? user.position = samePosition : user.position = counter;
-        if (user.score !== currentScore) {
-            samePosition = counter;
-        }
+        // Activate this code just before loading the first match result
+
+        // user.score === currentScore ? user.position = samePosition : user.position = counter;
+        // if (user.score !== currentScore) {
+        //     samePosition = counter;
+        // }
+        // counter += 1;
+        // currentScore = user.score;
+
+        // Desactivate this code just before loading the first match result
+        user.position = counter;
         counter += 1;
-        currentScore = user.score;
     }
     
     res.render('standings', { users });
