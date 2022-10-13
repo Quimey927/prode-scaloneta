@@ -72,7 +72,7 @@ iframe {
     margin: 3rem auto;
 }
 
-.prode-container {
+.group-stage-container {
     display: grid;
     justify-content: space-around;
     grid-template-columns: repeat(auto-fill, 480px);
@@ -170,7 +170,7 @@ iframe {
 }
 
 @media (max-width: 500px) {
-    .prode-container {
+    .group-stage-container {
         grid-template-columns: 380px;
     }
 
@@ -189,7 +189,7 @@ iframe {
 }
 
 @media (max-width: 380px) {
-    .prode-container {
+    .group-stage-container {
         grid-template-columns: 320px;
     }
 
