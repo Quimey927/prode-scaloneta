@@ -1,7 +1,6 @@
 <% layout('layouts/boilerplate') %>
 
 <div class="image-container prode-image-container">
-
     <% if (success && success.length) { %>
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
             <%= success %>
@@ -16,7 +15,7 @@
         </div>
     <% } %>
 
-    <div class="container py-5 text-center">
+    <div class="container-md py-5 text-center">
         <h1 class="text-center">Prode de <%= user.username %></h1>
         
         <% if (currentUser && user._id.equals(currentUser._id)) { %>
@@ -32,47 +31,53 @@
             </div>
         <% } %>
         
-        <div class="group-stage-container">
-
+        <div class="champion-top-scorer">
             <div>
                 <h3>Campeón</h3>
                 <p><%= user.champion %></p>
             </div>
-
+            
             <div>
                 <h3>Goleador</h3>
                 <p><%= user.topScorer %></p>
             </div>
-
+        </div>
         
-            <div class="group">
-                <div class="header">
-                    <div class="group-name">Grupo A</div>
-                    <div class="countries">
-                        <div class="country">Qatar</div>
-                        <div class="country">Ecuador</div>
-                        <div class="country">Senegal</div>
-                        <div class="country">Países Bajos</div>
+        <div>
+            <button class="btn btn-sm btn-success group-stage-on">Fase de grupos</button>
+            <button class="btn btn-sm btn-success playoffs-on">Fase de eliminatorias</button>
+        </div>
+
+            <div class="group-stage-container">
+
+                <div class="group">
+                    <div class="header">
+                        <div class="group-name">Grupo A</div>
+                        <div class="countries">
+                            <div class="country">Qatar</div>
+                            <div class="country">Ecuador</div>
+                            <div class="country">Senegal</div>
+                            <div class="country">Países Bajos</div>
+                        </div>
                     </div>
-                </div>
-                <div class="matches">
-                    <div class="match">
-                        <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
-                        <span>Qatar</span>
-                        <span><%= user.results[0] %></span>
-                        <span>-</span>
-                        <span><%= user.results[1] %></span>
-                        <span>Ecuador</span>
-                        <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
-                    </div>
-                    <div class="match">
-                        <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
-                        <span>Senegal</span>
-                        <span><%= user.results[2] %></span>
-                        <span>-</span>
-                        <span><%= user.results[3] %></span>
-                        <span>Países Bajos</span>
-                        <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
+                    <div class="matches">
+                        <div class="match">
+                            <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
+                            <span>Qatar</span>
+                            <span><%= user.results[0] %></span>
+                            <span>-</span>
+                            <span><%= user.results[1] %></span>
+                            <span>Ecuador</span>
+                            <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
+                        </div>
+                        <div class="match">
+                            <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
+                            <span>Senegal</span>
+                            <span><%= user.results[2] %></span>
+                            <span>-</span>
+                            <span><%= user.results[3] %></span>
+                            <span>Países Bajos</span>
+                            <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
                     </div>
                     <div class="match">
                         <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
@@ -589,6 +594,159 @@
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="playoffs-container py-4">
+
+            <h5 class="playoff-instance-title d-grid mb-0 align-items-center bg-secondary text-white rounded">Octavos</h5>
+            <h5 class="playoff-instance-title d-grid mb-0 align-items-center bg-secondary text-white rounded">Cuartos</h5>
+            <h5 class="playoff-instance-title d-grid mb-0 align-items-center bg-secondary text-white rounded">Semis</h5>
+            <h5 class="playoff-instance-title d-grid mb-0 align-items-center bg-secondary text-white rounded">Final</h5>
+
+            <div class="octavos playoff-instance">
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div class="cuartos playoff-instance">
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                    <span>Estados Unidos</span>
+                    <span>2</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                    <span>Estados Unidos</span>
+                    <span>2</span>
+                </div>
+            </div>
+
+            <div class="semis playoff-instance">
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="playoff-match">
+                    <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                    <span>Estados Unidos</span>
+                    <span>2</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+            </div>
+
+            <div class="final playoff-instance">
+                <div class="playoff-match">
+                    <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                    <span>Corea del Sur</span>
+                    <span>3</span>
+                    <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                    <span>Arabia Saudita</span>
+                    <span>1</span>
+                </div>
+                <div class="third-position">
+                    <p class="d-grid align-items-center bg-secondary text-white rounded">Tercer puesto</p>
+                    <div class="playoff-match">
+                        <img class="playoff-flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                        <span>Corea del Sur</span>
+                        <span>3</span>
+                        <img class="playoff-flag" class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                        <span>Arabia Saudita</span>
+                        <span>1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script src="/javascripts/toggleGroupsPlayoffs.js"></script>
+<script src="/javascripts/playoffInstanceOpen.js"></script>
