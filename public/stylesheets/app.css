@@ -79,8 +79,12 @@ iframe {
     grid-template-columns: repeat(auto-fill, 480px);
 }
 
+.group-stage-container {
+    display: grid; /* stage = 'Group Stage' ? 'display: grid;' : 'display: none;' */ 
+}
+
 .playoffs-container {
-    display: none;
+    display: none; /* stage = 'Group Stage' ? 'display: none;' : 'display: grid;' */ 
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 40px 1fr;
     gap: 0 2em;
@@ -104,10 +108,14 @@ iframe {
     display: grid;
     grid-template-rows: 1fr;
     align-items: center;
+    position: relative;
+
 }
 
 .third-position {
-    margin-top: 40px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .champion,
@@ -154,6 +162,18 @@ iframe {
     border: 1px solid #777;
     border-radius: 10px;
     background-color: #fff;
+}
+
+.edit-playoff-match {
+    width: fit-content;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.8em 0.2em;
+    align-items: center;
+    grid-template-columns: 50px 150px 31px;
+    padding: 0.5em;
+    border: 1px solid #777;
+    border-radius: 10px;
 }
 
 .playoff-match:nth-of-type(odd){
@@ -223,18 +243,6 @@ iframe {
 @media (max-width: 1199px) {
     .playoffs-container {
         font-size: 0.9rem;
-    }
-}
-
-@media (min-width: 992px) {
-    .final {
-        position: relative;
-    }
-
-    .third-position {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
     }
 }
 

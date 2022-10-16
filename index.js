@@ -20,7 +20,7 @@ const playersRoutes = require('./routes/players');
 const userRoutes = require('./routes/users');
 const standingRoutes = require('./routes/standings');
 
-const dbUrl = /* process.env.DB_URL ||  */'mongodb://127.0.0.1:27017/prode';
+const dbUrl = process.env.DB_URL || 'mongodb://127.0.0.1:27017/prode';
 
 mongoose
     .connect(dbUrl)

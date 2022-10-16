@@ -3,14 +3,16 @@ const playoffsOn = document.querySelector('.playoffs-on');
 const groupStageContainer = document.querySelector('.group-stage-container');
 const playoffsContainer = document.querySelector('.playoffs-container');
 
-const showGroupStage = () => {
+const showGroupStage = (evt) => {
+  evt.preventDefault();
   groupStageContainer.classList.remove('d-none');
   groupStageContainer.classList.add('d-grid');
   playoffsContainer.classList.remove('d-grid');
   playoffsContainer.classList.add('d-none');
 }
 
-const showPlayoffs = () => {
+const showPlayoffs = (evt) => {
+  evt.preventDefault();
   groupStageContainer.classList.remove('d-grid');
   groupStageContainer.classList.add('d-none');
   playoffsContainer.classList.remove('d-none');

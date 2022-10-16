@@ -2,7 +2,7 @@
 
 <div class="image-container prode-image-container">
 
-    <div class="container py-5 text-center">
+    <div class="container-md py-5 text-center">
         <h1>Editar prode</h1>
 
         <div class="mb-3">
@@ -10,619 +10,772 @@
         </div>
 
         <form action="/participantes/<%= user._id %>?_method=put" method="post">
-            <button class="btn btn-primary">Guardar cambios</button>
-            <div class="group-stage-container">
 
-                <div class="champion">
-                    <h3>Campeón</h3>
-                    <select class="form-select text-center" name="champion">
-                        <option value="Sin elegir aún">Sin elegir aún</option>
-                        <option value="Alemania">Alemania</option>
-                        <option value="Arabia Saudita">Arabia Saudita</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Bélgica">Bélgica</option>
-                        <option value="Brasil">Brasil</option>
-                        <option value="Camerún">Camerún</option>
-                        <option value="Canadá">Canadá</option>
-                        <option value="Corea del Sur">Corea del Sur</option>
-                        <option value="Costa Rica">Costa Rica</option>
-                        <option value="Croacia">Croacia</option>
-                        <option value="Dinamarca">Dinamarca</option>
-                        <option value="Ecuador">Ecuador</option>
-                        <option value="España">España</option>
-                        <option value="Estados Unidos">Estados Unidos</option>
-                        <option value="Francia">Francia</option>
-                        <option value="Gales">Gales</option>
-                        <option value="Ghana">Ghana</option>
-                        <option value="Inglaterra">Inglaterra</option>
-                        <option value="Irán">Irán</option>
-                        <option value="Japón">Japón</option>
-                        <option value="Marruecos">Marruecos</option>
-                        <option value="México">México</option>
-                        <option value="Países Bajos">Países Bajos</option>
-                        <option value="Polonia">Polonia</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Qatar">Qatar</option>
-                        <option value="Senegal">Senegal</option>
-                        <option value="Serbia">Serbia</option>
-                        <option value="Suiza">Suiza</option>
-                        <option value="Túnez">Túnez</option>
-                        <option value="Uruguay">Uruguay</option>
-                    </select>
-                </div>
-                
-                <div class="top-scorer">
-                    <h3>Goleador</h3>
-                    <select class="form-select text-center" name="topScorer">
-                        <option value="Sin elegir aún">Sin elegir aún</option>
-                        <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
-                        <option value="Enner Valencia">Enner Valencia</option>
-                        <option value="Ferran Torres">Ferran Torres</option>
-                        <option value="Harry Kane">Harry Kane</option>
-                        <option value="Ivan Perišić">Ivan Perišić</option>
-                        <option value="Karim Benzema">Karim Benzema</option>
-                        <option value="Kevin De Bruyne">Kevin De Bruyne</option>
-                        <option value="Kylian Mbappé">Kylian Mbappé</option>
-                        <option value="Lautaro Martínez">Lautaro Martínez</option>
-                        <option value="Leroy Sané">Leroy Sané</option>
-                        <option value="Lionel Messi">Lionel Messi</option>
-                        <option value="Luis Suárez">Luis Suárez</option>
-                        <option value="Neymar">Neymar</option>
-                        <option value="Raheem Sterling">Raheem Sterling</option>
-                        <option value="Robert Lewandowski">Robert Lewandowski</option>
-                        <option value="Romelu Lukaku">Romelu Lukaku</option>
-                        <option value="Sadio Mané">Sadio Mané</option>
-                        <option value="Vinicius Jr">Vinicius Jr</option>
-                        <option value="Ninguno de estos">Ninguno de estos</option>
-                    </select>
-                </div>
-
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo A</div>
-                        <div class="countries">
-                            <div class="country">Qatar</div>
-                            <div class="country">Ecuador</div>
-                            <div class="country">Senegal</div>
-                            <div class="country">Países Bajos</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
-                            <label for="result-0" class="center">Qatar</label>
-                            <input class="goals" type="text" id="result-0" name="results[0]" maxlength="2" value="<%= user.results[0] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-1" name="results[1]" maxlength="2" value="<%= user.results[1] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-1" class="center">Ecuador</label>
-                            <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
-                            <label for="result-2" class="center">Senegal</label>
-                            <input class="goals" type="text" id="result-2" name="results[2]" maxlength="2" value="<%= user.results[2] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-3" name="results[3]" maxlength="2" value="<%= user.results[3] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-3" class="center">Países Bajos</label>
-                            <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
-                            <label for="result-4" class="center">Qatar</label>
-                            <input class="goals" type="text" id="result-4" name="results[4]" maxlength="2" value="<%= user.results[4] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-5" name="results[5]" maxlength="2" value="<%= user.results[5] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-5" class="center">Senegal</label>
-                            <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
-                            <label for="result-6" class="center">Países Bajos</label>
-                            <input class="goals" type="text" id="result-6" name="results[6]" maxlength="2" value="<%= user.results[6] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-7" name="results[7]" maxlength="2" value="<%= user.results[7] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-7" class="center">Ecuador</label>
-                            <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
-                            <label for="result-8" class="center">Ecuador</label>
-                            <input class="goals" type="text" id="result-8" name="results[8]" maxlength="2" value="<%= user.results[8] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-9" name="results[9]" maxlength="2" value="<%= user.results[9] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-9" class="center">Senegal</label>
-                            <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
-                            <label for="result-10" class="center">Países Bajos</label>
-                            <input class="goals" type="text" id="result-10" name="results[10]" maxlength="2" value="<%= user.results[10] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-11" name="results[11]" maxlength="2" value="<%= user.results[11] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-11" class="center">Qatar</label>
-                            <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo B</div>
-                        <div class="countries">
-                            <div class="country">Inglaterra</div>
-                            <div class="country">Irán</div>
-                            <div class="country">Estados Unidos</div>
-                            <div class="country">Gales</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
-                            <label for="result-12" class="center">Inglaterra</label>
-                            <input class="goals" type="text" id="result-12" name="results[12]" maxlength="2" value="<%= user.results[12] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-13" name="results[13]" maxlength="2" value="<%= user.results[13] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-13" class="center">Irán</label>
-                            <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
-                            <label for="result-14" class="center">Estados Unidos</label>
-                            <input class="goals" type="text" id="result-14" name="results[14]" maxlength="2" value="<%= user.results[14] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-15" name="results[15]" maxlength="2" value="<%= user.results[15] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-15" class="center">Gales</label>
-                            <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
-                            <label for="result-16" class="center">Gales</label>
-                            <input class="goals" type="text" id="result-16" name="results[16]" maxlength="2" value="<%= user.results[16] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-17" name="results[17]" maxlength="2" value="<%= user.results[17] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-17" class="center">Irán</label>
-                            <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
-                            <label for="result-18" class="center">Inglaterra</label>
-                            <input class="goals" type="text" id="result-18" name="results[18]" maxlength="2" value="<%= user.results[18] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-19" name="results[19]" maxlength="2" value="<%= user.results[19] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-19" class="center">Estados Unidos</label>
-                            <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
-                            <label for="result-20" class="center">Gales</label>
-                            <input class="goals" type="text" id="result-20" name="results[20]" maxlength="2" value="<%= user.results[20] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-21" name="results[21]" maxlength="2" value="<%= user.results[21] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-21" class="center">Inglaterra</label>
-                            <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
-                            <label for="result-22" class="center">Irán</label>
-                            <input class="goals" type="text" id="result-22" name="results[22]" maxlength="2" value="<%= user.results[22] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-23" name="results[23]" maxlength="2" value="<%= user.results[23] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-23" class="center">Estados Unidos</label>
-                            <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo C</div>
-                        <div class="countries">
-                            <div class="country">Argentina</div>
-                            <div class="country">Arabia Saudita</div>
-                            <div class="country">México</div>
-                            <div class="country">Polonia</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
-                            <label for="result-24" class="center">Argentina</label>
-                            <input class="goals" type="text" id="result-24" name="results[24]" maxlength="2" value="<%= user.results[24] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-25" name="results[25]" maxlength="2" value="<%= user.results[25] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-25" class="center">Arabia Saudita</label>
-                            <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
-                            <label for="result-26" class="center">México</label>
-                            <input class="goals" type="text" id="result-26" name="results[26]" maxlength="2" value="<%= user.results[26] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-27" name="results[27]" maxlength="2" value="<%= user.results[27] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-27" class="center">Polonia</label>
-                            <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
-                            <label for="result-28" class="center">Polonia</label>
-                            <input class="goals" type="text" id="result-28" name="results[28]" maxlength="2" value="<%= user.results[28] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-29" name="results[29]" maxlength="2" value="<%= user.results[29] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-29" class="center">Arabia Saudita</label>
-                            <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
-                            <label for="result-30" class="center">Argentina</label>
-                            <input class="goals" type="text" id="result-30" name="results[30]" maxlength="2" value="<%= user.results[30] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-31" name="results[31]" maxlength="2" value="<%= user.results[31] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-31" class="center">México</label>
-                            <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
-                            <label for="result-32" class="center">Polonia</label>
-                            <input class="goals" type="text" id="result-32" name="results[32]" maxlength="2" value="<%= user.results[32] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-33" name="results[33]" maxlength="2" value="<%= user.results[33] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-33" class="center">Argentina</label>
-                            <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
-                            <label for="result-34" class="center">Arabia Saudita</label>
-                            <input class="goals" type="text" id="result-34" name="results[34]" maxlength="2" value="<%= user.results[34] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-35" name="results[35]" maxlength="2" value="<%= user.results[35] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-35" class="center">México</label>
-                            <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo D</div>
-                        <div class="countries">
-                            <div class="country">Francia</div>
-                            <div class="country">Australia</div>
-                            <div class="country">Dinamarca</div>
-                            <div class="country">Túnez</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
-                            <label for="result-36" class="center">Dinamarca</label>
-                            <input class="goals" type="text" id="result-36" name="results[36]" maxlength="2" value="<%= user.results[36] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-37" name="results[37]" maxlength="2" value="<%= user.results[37] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-37" class="center">Túnez</label>
-                            <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
-                            <label for="result-38" class="center">Francia</label>
-                            <input class="goals" type="text" id="result-38" name="results[38]" maxlength="2" value="<%= user.results[38] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-39" name="results[39]" maxlength="2" value="<%= user.results[39] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-39" class="center">Australia</label>
-                            <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
-                            <label for="result-40" class="center">Túnez</label>
-                            <input class="goals" type="text" id="result-40" name="results[40]" maxlength="2" value="<%= user.results[40] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-41" name="results[41]" maxlength="2" value="<%= user.results[41] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-41" class="center">Australia</label>
-                            <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
-                            <label for="result-42" class="center">Francia</label>
-                            <input class="goals" type="text" id="result-42" name="results[42]" maxlength="2" value="<%= user.results[42] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-43" name="results[43]" maxlength="2" value="<%= user.results[43] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-43" class="center">Dinamarca</label>
-                            <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
-                            <label for="result-44" class="center">Australia</label>
-                            <input class="goals" type="text" id="result-44" name="results[44]" maxlength="2" value="<%= user.results[44] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-45" name="results[45]" maxlength="2" value="<%= user.results[45] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-45" class="center">Dinamarca</label>
-                            <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
-                            <label for="result-46" class="center">Túnez</label>
-                            <input class="goals" type="text" id="result-46" name="results[46]" maxlength="2" value="<%= user.results[46] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-47" name="results[47]" maxlength="2" value="<%= user.results[47] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-47" class="center">Francia</label>
-                            <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo E</div>
-                        <div class="countries">
-                            <div class="country">España</div>
-                            <div class="country">Costa Rica</div>
-                            <div class="country">Alemania</div>
-                            <div class="country">Japón</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
-                            <label for="result-48" class="center">Alemania</label>
-                            <input class="goals" type="text" id="result-48" name="results[48]" maxlength="2" value="<%= user.results[48] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-49" name="results[49]" maxlength="2" value="<%= user.results[49] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-49" class="center">Japón</label>
-                            <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
-                            <label for="result-50" class="center">España</label>
-                            <input class="goals" type="text" id="result-50" name="results[50]" maxlength="2" value="<%= user.results[50] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-51" name="results[51]" maxlength="2" value="<%= user.results[51] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-51" class="center">Costa Rica</label>
-                            <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
-                            <label for="result-52" class="center">Japón</label>
-                            <input class="goals" type="text" id="result-52" name="results[52]" maxlength="2" value="<%= user.results[52] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-53" name="results[53]" maxlength="2" value="<%= user.results[53] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-53" class="center">Costa Rica</label>
-                            <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
-                            <label for="result-54" class="center">España</label>
-                            <input class="goals" type="text" id="result-54" name="results[54]" maxlength="2" value="<%= user.results[54] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-55" name="results[55]" maxlength="2" value="<%= user.results[55] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-55" class="center">Alemania</label>
-                            <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
-                            <label for="result-56" class="center">Japón</label>
-                            <input class="goals" type="text" id="result-56" name="results[56]" maxlength="2" value="<%= user.results[56] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-57" name="results[57]" maxlength="2" value="<%= user.results[57] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-57" class="center">España</label>
-                            <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
-                            <label for="result-58" class="center">Costa Rica</label>
-                            <input class="goals" type="text" id="result-58" name="results[58]" maxlength="2" value="<%= user.results[58] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-59" name="results[59]" maxlength="2" value="<%= user.results[59] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-59" class="center">Alemania</label>
-                            <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo F</div>
-                        <div class="countries">
-                            <div class="country">Bélgica</div>
-                            <div class="country">Canadá</div>
-                            <div class="country">Marruecos</div>
-                            <div class="country">Croacia</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
-                            <label for="result-60" class="center">Marruecos</label>
-                            <input class="goals" type="text" id="result-60" name="results[60]" maxlength="2" value="<%= user.results[60] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-61" name="results[61]" maxlength="2" value="<%= user.results[61] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-61" class="center">Croacia</label>
-                            <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
-                            <label for="result-62" class="center">Bélgica</label>
-                            <input class="goals" type="text" id="result-62" name="results[62]" maxlength="2" value="<%= user.results[62] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-63" name="results[63]" maxlength="2" value="<%= user.results[63] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-63" class="center">Canadá</label>
-                            <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
-                            <label for="result-64" class="center">Bélgica</label>
-                            <input class="goals" type="text" id="result-64" name="results[64]" maxlength="2" value="<%= user.results[64] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-65" name="results[65]" maxlength="2" value="<%= user.results[65] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-65" class="center">Marruecos</label>
-                            <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
-                            <label for="result-66" class="center">Croacia</label>
-                            <input class="goals" type="text" id="result-66" name="results[66]" maxlength="2" value="<%= user.results[66] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-67" name="results[67]" maxlength="2" value="<%= user.results[67] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-67" class="center">Canadá</label>
-                            <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
-                            <label for="result-68" class="center">Croacia</label>
-                            <input class="goals" type="text" id="result-68" name="results[68]" maxlength="2" value="<%= user.results[68] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-69" name="results[69]" maxlength="2" value="<%= user.results[69] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-69" class="center">Bélgica</label>
-                            <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
-                            <label for="result-70" class="center">Canadá</label>
-                            <input class="goals" type="text" id="result-70" name="results[70]" maxlength="2" value="<%= user.results[70] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-71" name="results[71]" maxlength="2" value="<%= user.results[71] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-71" class="center">Marruecos</label>
-                            <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo G</div>
-                        <div class="countries">
-                            <div class="country">Brasil</div>
-                            <div class="country">Serbia</div>
-                            <div class="country">Suiza</div>
-                            <div class="country">Camerún</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
-                            <label for="result-72" class="center">Suiza</label>
-                            <input class="goals" type="text" id="result-72" name="results[72]" maxlength="2" value="<%= user.results[72] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-73" name="results[73]" maxlength="2" value="<%= user.results[73] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-73" class="center">Camerún</label>
-                            <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
-                            <label for="result-74" class="center">Brasil</label>
-                            <input class="goals" type="text" id="result-74" name="results[74]" maxlength="2" value="<%= user.results[74] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-75" name="results[75]" maxlength="2" value="<%= user.results[75] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-75" class="center">Serbia</label>
-                            <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
-                            <label for="result-76" class="center">Camerún</label>
-                            <input class="goals" type="text" id="result-76" name="results[76]" maxlength="2" value="<%= user.results[76] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-77" name="results[77]" maxlength="2" value="<%= user.results[77] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-77" class="center">Serbia</label>
-                            <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
-                            <label for="result-78" class="center">Brasil</label>
-                            <input class="goals" type="text" id="result-78" name="results[78]" maxlength="2" value="<%= user.results[78] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-79" name="results[79]" maxlength="2" value="<%= user.results[79] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-79" class="center">Suiza</label>
-                            <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
-                            <label for="result-80" class="center">Serbia</label>
-                            <input class="goals" type="text" id="result-80" name="results[80]" maxlength="2" value="<%= user.results[80] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-81" name="results[81]" maxlength="2" value="<%= user.results[81] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-81" class="center">Suiza</label>
-                            <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
-                            <label for="result-82" class="center">Camerún</label>
-                            <input class="goals" type="text" id="result-82" name="results[82]" maxlength="2" value="<%= user.results[82] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-83" name="results[83]" maxlength="2" value="<%= user.results[83] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-83" class="center">Brasil</label>
-                            <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="group">
-                    <div class="header">
-                        <div class="group-name">Grupo H</div>
-                        <div class="countries">
-                            <div class="country">Portugal</div>
-                            <div class="country">Ghana</div>
-                            <div class="country">Uruguay</div>
-                            <div class="country">Corea del Sur</div>
-                        </div>
-                    </div>
-                    <div class="matches">
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
-                            <label for="result-84" class="center">Uruguay</label>
-                            <input class="goals" type="text" id="result-84" name="results[84]" maxlength="2" value="<%= user.results[84] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-85" name="results[85]" maxlength="2" value="<%= user.results[85] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-85" class="center">Corea del Sur</label>
-                            <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
-                            <label for="result-86" class="center">Portugal</label>
-                            <input class="goals" type="text" id="result-86" name="results[86]" maxlength="2" value="<%= user.results[86] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-87" name="results[87]" maxlength="2" value="<%= user.results[87] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-87" class="center">Ghana</label>
-                            <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
-                            <label for="result-88" class="center">Corea del Sur</label>
-                            <input class="goals" type="text" id="result-88" name="results[88]" maxlength="2" value="<%= user.results[88] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-89" name="results[89]" maxlength="2" value="<%= user.results[89] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-89" class="center">Ghana</label>
-                            <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
-                            <label for="result-90" class="center">Portugal</label>
-                            <input class="goals" type="text" id="result-90" name="results[90]" maxlength="2" value="<%= user.results[90] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-91" name="results[91]" maxlength="2" value="<%= user.results[91] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-91" class="center">Uruguay</label>
-                            <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
-                            <label for="result-92" class="center">Ghana</label>
-                            <input class="goals" type="text" id="result-92" name="results[92]" maxlength="2" value="<%= user.results[92] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-93" name="results[93]" maxlength="2" value="<%= user.results[93] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-93" class="center">Uruguay</label>
-                            <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
-                        </div>
-                        <div class="match">
-                            <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
-                            <label for="result-94" class="center">Corea del Sur</label>
-                            <input class="goals" type="text" id="result-94" name="results[94]" maxlength="2" value="<%= user.results[94] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <span>-</span>
-                            <input class="goals" type="text" id="result-95" name="results[95]" maxlength="2" value="<%= user.results[95] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                            <label for="result-95" class="center">Portugal</label>
-                            <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mb-3">
+                <button class="btn btn-primary">Guardar cambios</button>
             </div>
+
+            <% if (stage === 'Group Stage') { %>
             
+                <div class="group-stage-container">
+                    <div class="champion">
+                        <h3>Campeón</h3>
+                        <select class="form-select text-center" name="champion">
+                            <option value="Sin elegir aún">Sin elegir aún</option>
+                            <option value="Alemania">Alemania</option>
+                            <option value="Arabia Saudita">Arabia Saudita</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Bélgica">Bélgica</option>
+                            <option value="Brasil">Brasil</option>
+                            <option value="Camerún">Camerún</option>
+                            <option value="Canadá">Canadá</option>
+                            <option value="Corea del Sur">Corea del Sur</option>
+                            <option value="Costa Rica">Costa Rica</option>
+                            <option value="Croacia">Croacia</option>
+                            <option value="Dinamarca">Dinamarca</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="España">España</option>
+                            <option value="Estados Unidos">Estados Unidos</option>
+                            <option value="Francia">Francia</option>
+                            <option value="Gales">Gales</option>
+                            <option value="Ghana">Ghana</option>
+                            <option value="Inglaterra">Inglaterra</option>
+                            <option value="Irán">Irán</option>
+                            <option value="Japón">Japón</option>
+                            <option value="Marruecos">Marruecos</option>
+                            <option value="México">México</option>
+                            <option value="Países Bajos">Países Bajos</option>
+                            <option value="Polonia">Polonia</option>
+                            <option value="Portugal">Portugal</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Senegal">Senegal</option>
+                            <option value="Serbia">Serbia</option>
+                            <option value="Suiza">Suiza</option>
+                            <option value="Túnez">Túnez</option>
+                            <option value="Uruguay">Uruguay</option>
+                        </select>
+                    </div>
+                    
+                    <div class="top-scorer">
+                        <h3>Goleador</h3>
+                        <select class="form-select text-center" name="topScorer">
+                            <option value="Sin elegir aún">Sin elegir aún</option>
+                            <option value="Cristiano Ronaldo">Cristiano Ronaldo</option>
+                            <option value="Enner Valencia">Enner Valencia</option>
+                            <option value="Ferran Torres">Ferran Torres</option>
+                            <option value="Harry Kane">Harry Kane</option>
+                            <option value="Ivan Perišić">Ivan Perišić</option>
+                            <option value="Karim Benzema">Karim Benzema</option>
+                            <option value="Kevin De Bruyne">Kevin De Bruyne</option>
+                            <option value="Kylian Mbappé">Kylian Mbappé</option>
+                            <option value="Lautaro Martínez">Lautaro Martínez</option>
+                            <option value="Leroy Sané">Leroy Sané</option>
+                            <option value="Lionel Messi">Lionel Messi</option>
+                            <option value="Luis Suárez">Luis Suárez</option>
+                            <option value="Neymar">Neymar</option>
+                            <option value="Raheem Sterling">Raheem Sterling</option>
+                            <option value="Robert Lewandowski">Robert Lewandowski</option>
+                            <option value="Romelu Lukaku">Romelu Lukaku</option>
+                            <option value="Sadio Mané">Sadio Mané</option>
+                            <option value="Vinicius Jr">Vinicius Jr</option>
+                            <option value="Ninguno de estos">Ninguno de estos</option>
+                        </select>
+                    </div>
+
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo A</div>
+                            <div class="countries">
+                                <div class="country">Qatar</div>
+                                <div class="country">Ecuador</div>
+                                <div class="country">Senegal</div>
+                                <div class="country">Países Bajos</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
+                                <label for="result-0" class="center">Qatar</label>
+                                <input class="goals" type="text" id="result-0" name="results[0]" maxlength="2" value="<%= user.results[0] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-1" name="results[1]" maxlength="2" value="<%= user.results[1] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-1" class="center">Ecuador</label>
+                                <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
+                                <label for="result-2" class="center">Senegal</label>
+                                <input class="goals" type="text" id="result-2" name="results[2]" maxlength="2" value="<%= user.results[2] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-3" name="results[3]" maxlength="2" value="<%= user.results[3] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-3" class="center">Países Bajos</label>
+                                <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
+                                <label for="result-4" class="center">Qatar</label>
+                                <input class="goals" type="text" id="result-4" name="results[4]" maxlength="2" value="<%= user.results[4] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-5" name="results[5]" maxlength="2" value="<%= user.results[5] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-5" class="center">Senegal</label>
+                                <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
+                                <label for="result-6" class="center">Países Bajos</label>
+                                <input class="goals" type="text" id="result-6" name="results[6]" maxlength="2" value="<%= user.results[6] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-7" name="results[7]" maxlength="2" value="<%= user.results[7] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-7" class="center">Ecuador</label>
+                                <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/ecuador.png" alt="Bandera de Ecuador">
+                                <label for="result-8" class="center">Ecuador</label>
+                                <input class="goals" type="text" id="result-8" name="results[8]" maxlength="2" value="<%= user.results[8] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-9" name="results[9]" maxlength="2" value="<%= user.results[9] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-9" class="center">Senegal</label>
+                                <img class="flag" src="/img/banderas/senegal.png" alt="Bandera de Senegal">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/holanda.png" alt="Bandera de Holanda">
+                                <label for="result-10" class="center">Países Bajos</label>
+                                <input class="goals" type="text" id="result-10" name="results[10]" maxlength="2" value="<%= user.results[10] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-11" name="results[11]" maxlength="2" value="<%= user.results[11] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-11" class="center">Qatar</label>
+                                <img class="flag" src="/img/banderas/qatar.png" alt="Bandera de Qatar">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo B</div>
+                            <div class="countries">
+                                <div class="country">Inglaterra</div>
+                                <div class="country">Irán</div>
+                                <div class="country">Estados Unidos</div>
+                                <div class="country">Gales</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
+                                <label for="result-12" class="center">Inglaterra</label>
+                                <input class="goals" type="text" id="result-12" name="results[12]" maxlength="2" value="<%= user.results[12] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-13" name="results[13]" maxlength="2" value="<%= user.results[13] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-13" class="center">Irán</label>
+                                <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                                <label for="result-14" class="center">Estados Unidos</label>
+                                <input class="goals" type="text" id="result-14" name="results[14]" maxlength="2" value="<%= user.results[14] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-15" name="results[15]" maxlength="2" value="<%= user.results[15] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-15" class="center">Gales</label>
+                                <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
+                                <label for="result-16" class="center">Gales</label>
+                                <input class="goals" type="text" id="result-16" name="results[16]" maxlength="2" value="<%= user.results[16] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-17" name="results[17]" maxlength="2" value="<%= user.results[17] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-17" class="center">Irán</label>
+                                <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
+                                <label for="result-18" class="center">Inglaterra</label>
+                                <input class="goals" type="text" id="result-18" name="results[18]" maxlength="2" value="<%= user.results[18] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-19" name="results[19]" maxlength="2" value="<%= user.results[19] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-19" class="center">Estados Unidos</label>
+                                <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/gales.png" alt="Bandera de Gales">
+                                <label for="result-20" class="center">Gales</label>
+                                <input class="goals" type="text" id="result-20" name="results[20]" maxlength="2" value="<%= user.results[20] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-21" name="results[21]" maxlength="2" value="<%= user.results[21] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-21" class="center">Inglaterra</label>
+                                <img class="flag" src="/img/banderas/inglaterra.png" alt="Bandera de Inglaterra">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/iran.png" alt="Bandera de Irán">
+                                <label for="result-22" class="center">Irán</label>
+                                <input class="goals" type="text" id="result-22" name="results[22]" maxlength="2" value="<%= user.results[22] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-23" name="results[23]" maxlength="2" value="<%= user.results[23] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-23" class="center">Estados Unidos</label>
+                                <img class="flag" src="/img/banderas/estados-unidos.png" alt="Bandera de Estados Unidos">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo C</div>
+                            <div class="countries">
+                                <div class="country">Argentina</div>
+                                <div class="country">Arabia Saudita</div>
+                                <div class="country">México</div>
+                                <div class="country">Polonia</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
+                                <label for="result-24" class="center">Argentina</label>
+                                <input class="goals" type="text" id="result-24" name="results[24]" maxlength="2" value="<%= user.results[24] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-25" name="results[25]" maxlength="2" value="<%= user.results[25] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-25" class="center">Arabia Saudita</label>
+                                <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
+                                <label for="result-26" class="center">México</label>
+                                <input class="goals" type="text" id="result-26" name="results[26]" maxlength="2" value="<%= user.results[26] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-27" name="results[27]" maxlength="2" value="<%= user.results[27] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-27" class="center">Polonia</label>
+                                <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
+                                <label for="result-28" class="center">Polonia</label>
+                                <input class="goals" type="text" id="result-28" name="results[28]" maxlength="2" value="<%= user.results[28] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-29" name="results[29]" maxlength="2" value="<%= user.results[29] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-29" class="center">Arabia Saudita</label>
+                                <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
+                                <label for="result-30" class="center">Argentina</label>
+                                <input class="goals" type="text" id="result-30" name="results[30]" maxlength="2" value="<%= user.results[30] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-31" name="results[31]" maxlength="2" value="<%= user.results[31] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-31" class="center">México</label>
+                                <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/polonia.png" alt="Bandera de Polonia">
+                                <label for="result-32" class="center">Polonia</label>
+                                <input class="goals" type="text" id="result-32" name="results[32]" maxlength="2" value="<%= user.results[32] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-33" name="results[33]" maxlength="2" value="<%= user.results[33] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-33" class="center">Argentina</label>
+                                <img class="flag" src="/img/banderas/argentina.png" alt="Bandera de Argentina">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/arabia-saudita.png" alt="Bandera de Arabia Saudita">
+                                <label for="result-34" class="center">Arabia Saudita</label>
+                                <input class="goals" type="text" id="result-34" name="results[34]" maxlength="2" value="<%= user.results[34] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-35" name="results[35]" maxlength="2" value="<%= user.results[35] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-35" class="center">México</label>
+                                <img class="flag" src="/img/banderas/mexico.png" alt="Bandera de México">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo D</div>
+                            <div class="countries">
+                                <div class="country">Francia</div>
+                                <div class="country">Australia</div>
+                                <div class="country">Dinamarca</div>
+                                <div class="country">Túnez</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
+                                <label for="result-36" class="center">Dinamarca</label>
+                                <input class="goals" type="text" id="result-36" name="results[36]" maxlength="2" value="<%= user.results[36] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-37" name="results[37]" maxlength="2" value="<%= user.results[37] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-37" class="center">Túnez</label>
+                                <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
+                                <label for="result-38" class="center">Francia</label>
+                                <input class="goals" type="text" id="result-38" name="results[38]" maxlength="2" value="<%= user.results[38] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-39" name="results[39]" maxlength="2" value="<%= user.results[39] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-39" class="center">Australia</label>
+                                <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
+                                <label for="result-40" class="center">Túnez</label>
+                                <input class="goals" type="text" id="result-40" name="results[40]" maxlength="2" value="<%= user.results[40] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-41" name="results[41]" maxlength="2" value="<%= user.results[41] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-41" class="center">Australia</label>
+                                <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
+                                <label for="result-42" class="center">Francia</label>
+                                <input class="goals" type="text" id="result-42" name="results[42]" maxlength="2" value="<%= user.results[42] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-43" name="results[43]" maxlength="2" value="<%= user.results[43] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-43" class="center">Dinamarca</label>
+                                <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/australia.png" alt="Bandera de Australia">
+                                <label for="result-44" class="center">Australia</label>
+                                <input class="goals" type="text" id="result-44" name="results[44]" maxlength="2" value="<%= user.results[44] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-45" name="results[45]" maxlength="2" value="<%= user.results[45] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-45" class="center">Dinamarca</label>
+                                <img class="flag" src="/img/banderas/dinamarca.png" alt="Bandera de Dinamarca">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/tunez.png" alt="Bandera de Túnez">
+                                <label for="result-46" class="center">Túnez</label>
+                                <input class="goals" type="text" id="result-46" name="results[46]" maxlength="2" value="<%= user.results[46] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-47" name="results[47]" maxlength="2" value="<%= user.results[47] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-47" class="center">Francia</label>
+                                <img class="flag" src="/img/banderas/francia.png" alt="Bandera de Francia">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo E</div>
+                            <div class="countries">
+                                <div class="country">España</div>
+                                <div class="country">Costa Rica</div>
+                                <div class="country">Alemania</div>
+                                <div class="country">Japón</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
+                                <label for="result-48" class="center">Alemania</label>
+                                <input class="goals" type="text" id="result-48" name="results[48]" maxlength="2" value="<%= user.results[48] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-49" name="results[49]" maxlength="2" value="<%= user.results[49] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-49" class="center">Japón</label>
+                                <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
+                                <label for="result-50" class="center">España</label>
+                                <input class="goals" type="text" id="result-50" name="results[50]" maxlength="2" value="<%= user.results[50] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-51" name="results[51]" maxlength="2" value="<%= user.results[51] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-51" class="center">Costa Rica</label>
+                                <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
+                                <label for="result-52" class="center">Japón</label>
+                                <input class="goals" type="text" id="result-52" name="results[52]" maxlength="2" value="<%= user.results[52] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-53" name="results[53]" maxlength="2" value="<%= user.results[53] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-53" class="center">Costa Rica</label>
+                                <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
+                                <label for="result-54" class="center">España</label>
+                                <input class="goals" type="text" id="result-54" name="results[54]" maxlength="2" value="<%= user.results[54] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-55" name="results[55]" maxlength="2" value="<%= user.results[55] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-55" class="center">Alemania</label>
+                                <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/japon.png" alt="Bandera de Japón">
+                                <label for="result-56" class="center">Japón</label>
+                                <input class="goals" type="text" id="result-56" name="results[56]" maxlength="2" value="<%= user.results[56] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-57" name="results[57]" maxlength="2" value="<%= user.results[57] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-57" class="center">España</label>
+                                <img class="flag" src="/img/banderas/españa.png" alt="Bandera de España">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/costa-rica.png" alt="Bandera de Costa Rica">
+                                <label for="result-58" class="center">Costa Rica</label>
+                                <input class="goals" type="text" id="result-58" name="results[58]" maxlength="2" value="<%= user.results[58] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-59" name="results[59]" maxlength="2" value="<%= user.results[59] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-59" class="center">Alemania</label>
+                                <img class="flag" src="/img/banderas/alemania.png" alt="Bandera de Alemania">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo F</div>
+                            <div class="countries">
+                                <div class="country">Bélgica</div>
+                                <div class="country">Canadá</div>
+                                <div class="country">Marruecos</div>
+                                <div class="country">Croacia</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
+                                <label for="result-60" class="center">Marruecos</label>
+                                <input class="goals" type="text" id="result-60" name="results[60]" maxlength="2" value="<%= user.results[60] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-61" name="results[61]" maxlength="2" value="<%= user.results[61] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-61" class="center">Croacia</label>
+                                <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
+                                <label for="result-62" class="center">Bélgica</label>
+                                <input class="goals" type="text" id="result-62" name="results[62]" maxlength="2" value="<%= user.results[62] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-63" name="results[63]" maxlength="2" value="<%= user.results[63] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-63" class="center">Canadá</label>
+                                <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
+                                <label for="result-64" class="center">Bélgica</label>
+                                <input class="goals" type="text" id="result-64" name="results[64]" maxlength="2" value="<%= user.results[64] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-65" name="results[65]" maxlength="2" value="<%= user.results[65] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-65" class="center">Marruecos</label>
+                                <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
+                                <label for="result-66" class="center">Croacia</label>
+                                <input class="goals" type="text" id="result-66" name="results[66]" maxlength="2" value="<%= user.results[66] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-67" name="results[67]" maxlength="2" value="<%= user.results[67] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-67" class="center">Canadá</label>
+                                <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/croacia.png" alt="Bandera de Croacia">
+                                <label for="result-68" class="center">Croacia</label>
+                                <input class="goals" type="text" id="result-68" name="results[68]" maxlength="2" value="<%= user.results[68] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-69" name="results[69]" maxlength="2" value="<%= user.results[69] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-69" class="center">Bélgica</label>
+                                <img class="flag" src="/img/banderas/belgica.png" alt="Bandera de Bélgica">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/canada.png" alt="Bandera de Canadá">
+                                <label for="result-70" class="center">Canadá</label>
+                                <input class="goals" type="text" id="result-70" name="results[70]" maxlength="2" value="<%= user.results[70] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-71" name="results[71]" maxlength="2" value="<%= user.results[71] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-71" class="center">Marruecos</label>
+                                <img class="flag" src="/img/banderas/marruecos.png" alt="Bandera de Marruecos">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo G</div>
+                            <div class="countries">
+                                <div class="country">Brasil</div>
+                                <div class="country">Serbia</div>
+                                <div class="country">Suiza</div>
+                                <div class="country">Camerún</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
+                                <label for="result-72" class="center">Suiza</label>
+                                <input class="goals" type="text" id="result-72" name="results[72]" maxlength="2" value="<%= user.results[72] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-73" name="results[73]" maxlength="2" value="<%= user.results[73] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-73" class="center">Camerún</label>
+                                <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
+                                <label for="result-74" class="center">Brasil</label>
+                                <input class="goals" type="text" id="result-74" name="results[74]" maxlength="2" value="<%= user.results[74] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-75" name="results[75]" maxlength="2" value="<%= user.results[75] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-75" class="center">Serbia</label>
+                                <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
+                                <label for="result-76" class="center">Camerún</label>
+                                <input class="goals" type="text" id="result-76" name="results[76]" maxlength="2" value="<%= user.results[76] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-77" name="results[77]" maxlength="2" value="<%= user.results[77] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-77" class="center">Serbia</label>
+                                <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
+                                <label for="result-78" class="center">Brasil</label>
+                                <input class="goals" type="text" id="result-78" name="results[78]" maxlength="2" value="<%= user.results[78] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-79" name="results[79]" maxlength="2" value="<%= user.results[79] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-79" class="center">Suiza</label>
+                                <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/serbia.png" alt="Bandera de Serbia">
+                                <label for="result-80" class="center">Serbia</label>
+                                <input class="goals" type="text" id="result-80" name="results[80]" maxlength="2" value="<%= user.results[80] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-81" name="results[81]" maxlength="2" value="<%= user.results[81] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-81" class="center">Suiza</label>
+                                <img class="flag" src="/img/banderas/suiza.png" alt="Bandera de Suiza">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/camerun.png" alt="Bandera de Camerún">
+                                <label for="result-82" class="center">Camerún</label>
+                                <input class="goals" type="text" id="result-82" name="results[82]" maxlength="2" value="<%= user.results[82] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-83" name="results[83]" maxlength="2" value="<%= user.results[83] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-83" class="center">Brasil</label>
+                                <img class="flag" src="/img/banderas/brasil.png" alt="Bandera de Brasil">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="group">
+                        <div class="header">
+                            <div class="group-name">Grupo H</div>
+                            <div class="countries">
+                                <div class="country">Portugal</div>
+                                <div class="country">Ghana</div>
+                                <div class="country">Uruguay</div>
+                                <div class="country">Corea del Sur</div>
+                            </div>
+                        </div>
+                        <div class="matches">
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
+                                <label for="result-84" class="center">Uruguay</label>
+                                <input class="goals" type="text" id="result-84" name="results[84]" maxlength="2" value="<%= user.results[84] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-85" name="results[85]" maxlength="2" value="<%= user.results[85] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-85" class="center">Corea del Sur</label>
+                                <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
+                                <label for="result-86" class="center">Portugal</label>
+                                <input class="goals" type="text" id="result-86" name="results[86]" maxlength="2" value="<%= user.results[86] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-87" name="results[87]" maxlength="2" value="<%= user.results[87] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-87" class="center">Ghana</label>
+                                <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                                <label for="result-88" class="center">Corea del Sur</label>
+                                <input class="goals" type="text" id="result-88" name="results[88]" maxlength="2" value="<%= user.results[88] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-89" name="results[89]" maxlength="2" value="<%= user.results[89] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-89" class="center">Ghana</label>
+                                <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
+                                <label for="result-90" class="center">Portugal</label>
+                                <input class="goals" type="text" id="result-90" name="results[90]" maxlength="2" value="<%= user.results[90] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-91" name="results[91]" maxlength="2" value="<%= user.results[91] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-91" class="center">Uruguay</label>
+                                <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/ghana.png" alt="Bandera de Ghana">
+                                <label for="result-92" class="center">Ghana</label>
+                                <input class="goals" type="text" id="result-92" name="results[92]" maxlength="2" value="<%= user.results[92] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-93" name="results[93]" maxlength="2" value="<%= user.results[93] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-93" class="center">Uruguay</label>
+                                <img class="flag" src="/img/banderas/uruguay.png" alt="Bandera de Uruguay">
+                            </div>
+                            <div class="match">
+                                <img class="flag" src="/img/banderas/corea-del-sur.png" alt="Bandera de Corea del Sur">
+                                <label for="result-94" class="center">Corea del Sur</label>
+                                <input class="goals" type="text" id="result-94" name="results[94]" maxlength="2" value="<%= user.results[94] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <span>-</span>
+                                <input class="goals" type="text" id="result-95" name="results[95]" maxlength="2" value="<%= user.results[95] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                <label for="result-95" class="center">Portugal</label>
+                                <img class="flag" src="/img/banderas/portugal.png" alt="Bandera de Portugal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <% } else if (stage === 'Octavos') { %>
+            
+                <h5 class="d-inline-block px-5 py-2 mb-3 bg-secondary text-white rounded">Octavos</h5>
+                <div class="edit-playoff-match mb-1">
+                    <img src=<%= classifiedTeams[0].src %> alt=<%= classifiedTeams[0].alt %>>
+                    <label for="result-96" class="center"><%= classifiedTeams[0].team %></label>
+                    <input class="goals" type="text" id="result-96" name="results[96]" maxlength="2" value="<%= user.results[96] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[1].src %> alt=<%= classifiedTeams[1].alt %>>
+                    <label for="result-97" class="center"><%= classifiedTeams[1].team %></label>
+                    <input class="goals" type="text" id="result-97" name="results[97]" maxlength="2" value="<%= user.results[97] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[2].src %> alt=<%= classifiedTeams[2].alt %>>
+                    <label for="result-98" class="center"><%= classifiedTeams[2].team %></label>
+                    <input class="goals" type="text" id="result-98" name="results[98]" maxlength="2" value="<%= user.results[98] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[3].src %> alt=<%= classifiedTeams[3].alt %>>
+                    <label for="result-99" class="center"><%= classifiedTeams[3].team %></label>
+                    <input class="goals" type="text" id="result-99" name="results[99]" maxlength="2" value="<%= user.results[99] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-1">
+                    <img src=<%= classifiedTeams[4].src %> alt=<%= classifiedTeams[4].alt %>>
+                    <label for="result-100" class="center"><%= classifiedTeams[4].team %></label>
+                    <input class="goals" type="text" id="result-100" name="results[100]" maxlength="2" value="<%= user.results[100] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[5].src %> alt=<%= classifiedTeams[5].alt %>>
+                    <label for="result-101" class="center"><%= classifiedTeams[5].team %></label>
+                    <input class="goals" type="text" id="result-101" name="results[101]" maxlength="2" value="<%= user.results[101] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[6].src %> alt=<%= classifiedTeams[6].alt %>>
+                    <label for="result-102" class="center"><%= classifiedTeams[6].team %></label>
+                    <input class="goals" type="text" id="result-102" name="results[102]" maxlength="2" value="<%= user.results[102] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[7].src %> alt=<%= classifiedTeams[7].alt %>>
+                    <label for="result-103" class="center"><%= classifiedTeams[7].team %></label>
+                    <input class="goals" type="text" id="result-103" name="results[103]" maxlength="2" value="<%= user.results[103] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-1">
+                    <img src=<%= classifiedTeams[8].src %> alt=<%= classifiedTeams[8].alt %>>
+                    <label for="result-104" class="center"><%= classifiedTeams[8].team %></label>
+                    <input class="goals" type="text" id="result-104" name="results[104]" maxlength="2" value="<%= user.results[104] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[9].src %> alt=<%= classifiedTeams[9].alt %>>
+                    <label for="result-105" class="center"><%= classifiedTeams[9].team %></label>
+                    <input class="goals" type="text" id="result-105" name="results[105]" maxlength="2" value="<%= user.results[105] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[10].src %> alt=<%= classifiedTeams[10].alt %>>
+                    <label for="result-106" class="center"><%= classifiedTeams[10].team %></label>
+                    <input class="goals" type="text" id="result-106" name="results[106]" maxlength="2" value="<%= user.results[106] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[11].src %> alt=<%= classifiedTeams[11].alt %>>
+                    <label for="result-107" class="center"><%= classifiedTeams[11].team %></label>
+                    <input class="goals" type="text" id="result-107" name="results[107]" maxlength="2" value="<%= user.results[107] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-1">
+                    <img src=<%= classifiedTeams[12].src %> alt=<%= classifiedTeams[12].alt %>>
+                    <label for="result-108" class="center"><%= classifiedTeams[12].team %></label>
+                    <input class="goals" type="text" id="result-108" name="results[108]" maxlength="2" value="<%= user.results[108] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[13].src %> alt=<%= classifiedTeams[13].alt %>>
+                    <label for="result-109" class="center"><%= classifiedTeams[13].team %></label>
+                    <input class="goals" type="text" id="result-109" name="results[109]" maxlength="2" value="<%= user.results[109] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[14].src %> alt=<%= classifiedTeams[14].alt %>>
+                    <label for="result-110" class="center"><%= classifiedTeams[14].team %></label>
+                    <input class="goals" type="text" id="result-110" name="results[110]" maxlength="2" value="<%= user.results[110] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[15].src %> alt=<%= classifiedTeams[15].alt %>>
+                    <label for="result-111" class="center"><%= classifiedTeams[15].team %></label>
+                    <input class="goals" type="text" id="result-111" name="results[111]" maxlength="2" value="<%= user.results[111] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+
+            <% } else if (stage === 'Cuartos') { %>
+
+                <h5 class="d-inline-block px-5 py-2 mb-3 bg-secondary text-white rounded">Cuartos</h5>
+                <div class="edit-playoff-match mb-1">
+                    <img src=<%= classifiedTeams[16].src %> alt=<%= classifiedTeams[16].alt %>>
+                    <label for="result-112" class="center"><%= classifiedTeams[16].team %></label>
+                    <input class="goals" type="text" id="result-112" name="results[112]" maxlength="2" value="<%= user.results[112] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[17].src %> alt=<%= classifiedTeams[17].alt %>>
+                    <label for="result-113" class="center"><%= classifiedTeams[17].team %></label>
+                    <input class="goals" type="text" id="result-113" name="results[113]" maxlength="2" value="<%= user.results[113] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[18].src %> alt=<%= classifiedTeams[18].alt %>>
+                    <label for="result-114" class="center"><%= classifiedTeams[18].team %></label>
+                    <input class="goals" type="text" id="result-114" name="results[114]" maxlength="2" value="<%= user.results[114] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[19].src %> alt=<%= classifiedTeams[19].alt %>>
+                    <label for="result-115" class="center"><%= classifiedTeams[19].team %></label>
+                    <input class="goals" type="text" id="result-115" name="results[115]" maxlength="2" value="<%= user.results[115] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-1">
+                    <img src=<%= classifiedTeams[20].src %> alt=<%= classifiedTeams[20].alt %>>
+                    <label for="result-116" class="center"><%= classifiedTeams[20].team %></label>
+                    <input class="goals" type="text" id="result-116" name="results[116]" maxlength="2" value="<%= user.results[116] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[21].src %> alt=<%= classifiedTeams[21].alt %>>
+                    <label for="result-117" class="center"><%= classifiedTeams[21].team %></label>
+                    <input class="goals" type="text" id="result-117" name="results[117]" maxlength="2" value="<%= user.results[117] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[22].src %> alt=<%= classifiedTeams[22].alt %>>
+                    <label for="result-118" class="center"><%= classifiedTeams[22].team %></label>
+                    <input class="goals" type="text" id="result-118" name="results[118]" maxlength="2" value="<%= user.results[118] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[23].src %> alt=<%= classifiedTeams[23].alt %>>
+                    <label for="result-119" class="center"><%= classifiedTeams[23].team %></label>
+                    <input class="goals" type="text" id="result-119" name="results[119]" maxlength="2" value="<%= user.results[119] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+
+
+            <% } else if (stage === 'Semis') { %>
+        
+                <h5 class="d-inline-block px-5 py-2 mb-3 bg-secondary text-white rounded">Semis</h5>    
+                <div class="edit-playoff-match mb-1">
+                    <img src=<%= classifiedTeams[24].src %> alt=<%= classifiedTeams[24].alt %>>
+                    <label for="result-120" class="center"><%= classifiedTeams[24].team %></label>
+                    <input class="goals" type="text" id="result-120" name="results[120]" maxlength="2" value="<%= user.results[120] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[25].src %> alt=<%= classifiedTeams[25].alt %>>
+                    <label for="result-121" class="center"><%= classifiedTeams[25].team %></label>
+                    <input class="goals" type="text" id="result-121" name="results[121]" maxlength="2" value="<%= user.results[121] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[26].src %> alt=<%= classifiedTeams[26].alt %>>
+                    <label for="result-122" class="center"><%= classifiedTeams[26].team %></label>
+                    <input class="goals" type="text" id="result-122" name="results[122]" maxlength="2" value="<%= user.results[122] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[27].src %> alt=<%= classifiedTeams[27].alt %>>
+                    <label for="result-123" class="center"><%= classifiedTeams[27].team %></label>
+                    <input class="goals" type="text" id="result-123" name="results[123]" maxlength="2" value="<%= user.results[123] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+
+            <% } else if (stage === 'Final') { %>
+        
+                <h5 class="d-inline-block px-5 py-2 mb-3 align-items-center bg-secondary text-white rounded">Final</h5>
+                <div class="edit-playoff-match mb-5">
+                    <img src=<%= classifiedTeams[28].src %> alt=<%= classifiedTeams[28].alt %>>
+                    <label for="result-124" class="center"><%= classifiedTeams[28].team %></label>
+                    <input class="goals" type="text" id="result-124" name="results[124]" maxlength="2" value="<%= user.results[124] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[29].src %> alt=<%= classifiedTeams[29].alt %>>
+                    <label for="result-125" class="center"><%= classifiedTeams[29].team %></label>
+                    <input class="goals" type="text" id="result-125" name="results[125]" maxlength="2" value="<%= user.results[125] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+                <p class="d-inline-block px-5 py-2 mb-3 align-items-center bg-secondary text-white rounded">Tercer puesto</p>
+                <div class="edit-playoff-match mb-3">
+                    <img src=<%= classifiedTeams[30].src %> alt=<%= classifiedTeams[30].alt %>>
+                    <label for="result-126" class="center"><%= classifiedTeams[30].team %></label>
+                    <input class="goals" type="text" id="result-126" name="results[126]" maxlength="2" value="<%= user.results[126] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                    <img src=<%= classifiedTeams[31].src %> alt=<%= classifiedTeams[31].alt %>>
+                    <label for="result-127" class="center"><%= classifiedTeams[31].team %></label>
+                    <input class="goals" type="text" id="result-127" name="results[127]" maxlength="2" value="<%= user.results[127] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                </div>
+
+            <% } %>
+
             <div class="text-center mb-3">
                 <button class="btn btn-primary">Guardar cambios</button>
             </div>
@@ -631,14 +784,18 @@
 
 </div>
 
-<script>
-    const user = <%- JSON.stringify(user) %>
+<% if (stage === 'Group Stage') { %> 
 
-    const championDiv = document.querySelector('.champion');
-    const champion = championDiv.querySelector(`option[value='${user.champion}']`);
-    champion.setAttribute('selected', true);
+    <script>
+        const user = <%- JSON.stringify(user) %>
 
-    const topScorerDiv = document.querySelector('.top-scorer');
-    const topScorer = topScorerDiv.querySelector(`option[value='${user.topScorer}']`);
-    topScorer.setAttribute('selected', true);
-</script>
+        const championDiv = document.querySelector('.champion');
+        const champion = championDiv.querySelector(`option[value='${user.champion}']`);
+        champion.setAttribute('selected', true);
+
+        const topScorerDiv = document.querySelector('.top-scorer');
+        const topScorer = topScorerDiv.querySelector(`option[value='${user.topScorer}']`);
+        topScorer.setAttribute('selected', true);
+    </script>
+
+<% } %> 

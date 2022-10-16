@@ -9,7 +9,7 @@ module.exports.register = async (req, res) => {
         const { firstName, lastName, phone, username, email, password } = req.body;
         const results = [];
 
-        for (let i = 0; i < 96; i++) {
+        for (let i = 0; i < 128; i++) {
             results.push('');
         }
 

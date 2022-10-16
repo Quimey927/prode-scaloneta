@@ -11,7 +11,7 @@ module.exports.standings = async (req, res) => {
 
     for (let user of users) {
         user.score = 0;
-        for (let i = 0; i < 96; i += 2) {
+        for (let i = 0; i < 128; i += 2) {
             if (user.results[i] !== null && user.results[i + 1] !== null && prodeOficial.results[i] !== null && prodeOficial.results[i + 1] !== null) {
                 let userResult = user.results[i] - user.results[i + 1];
                 let prodeOficialResult = prodeOficial.results[i] - prodeOficial.results[i + 1];
