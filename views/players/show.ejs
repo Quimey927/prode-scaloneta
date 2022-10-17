@@ -17,6 +17,7 @@
 
     <div class="container-md py-5 text-center">
         <h1 class="text-center">Prode de <%= user.username %></h1>
+        <p class="text-center">Puntaje: <%= user.score %></p>
         
         <% if (currentUser && user._id.equals(currentUser._id)) { %>
             <div class="mb-3">
