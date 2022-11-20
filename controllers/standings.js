@@ -47,17 +47,16 @@ module.exports.standings = async (req, res) => {
     
     for (let user of users) {
         // Activate this code just before loading the first match result
-
-        // user.score === currentScore ? user.position = samePosition : user.position = counter;
-        // if (user.score !== currentScore) {
-        //     samePosition = counter;
-        // }
-        // counter += 1;
-        // currentScore = user.score;
+        user.score === currentScore ? user.position = samePosition : user.position = counter;
+        if (user.score !== currentScore) {
+            samePosition = counter;
+        }
+        counter += 1;
+        currentScore = user.score;
 
         // Desactivate this code just before loading the first match result
-        user.position = counter;
-        counter += 1;
+        // user.position = counter;
+        // counter += 1;
     }
     
     res.render('standings', { users });
