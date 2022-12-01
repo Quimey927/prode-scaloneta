@@ -19,7 +19,7 @@
         <h1 class="text-center">Prode de <%= user.username %></h1>
         <p class="text-center">Puntaje: <%= user.score %></p>
         
-        <% if (currentUser && user._id.equals(currentUser._id) && user.isAdmin) { %>
+        <% if (currentUser && user._id.equals(currentUser._id)) { %>
             <div class="mb-3">
                 <a class="btn btn-outline-primary btn-sm" href="/posiciones">Posiciones</a>
             </div>

@@ -11,9 +11,11 @@
 
         <form action="/participantes/<%= user._id %>?_method=put" method="post">
 
-            <div class="text-center mb-3">
-                <button class="btn btn-primary">Guardar cambios</button>
-            </div>
+            <% if (stage !== 'Fin del mundial') { %>
+                <div class="text-center mb-3">
+                    <button class="btn btn-primary">Guardar cambios</button>
+                </div>
+            <% } %>
 
             <% if (stage === 'Group Stage') { %>
             
@@ -774,11 +776,15 @@
                     <input class="goals" type="text" id="result-127" name="results[127]" maxlength="2" value="<%= user.results[127] %>" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </div>
 
+            <% } else if (stage === 'Fin del mundial') { %>
+                <h5 class="py-2 align-items-center">El mundial ya terminó, no se puede editar el prode.</h5>
             <% } %>
 
-            <div class="text-center mb-3">
-                <button class="btn btn-primary">Guardar cambios</button>
-            </div>
+            <% if (stage !== 'Fin del mundial') { %>
+                <div class="text-center mb-3">
+                    <button class="btn btn-primary">Guardar cambios</button>
+                </div>
+            <% } %>
         </form>
     </div>
 
