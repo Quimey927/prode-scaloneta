@@ -80,11 +80,11 @@ iframe {
 }
 
 .group-stage-container {
-    display: grid; /* stage = 'Group Stage' ? 'display: grid;' : 'display: none;' */ 
+    display: none; /* stage = 'Group Stage' ? 'display: grid;' : 'display: none;' */ 
 }
 
 .playoffs-container {
-    display: none; /* stage = 'Group Stage' ? 'display: none;' : 'display: grid;' */ 
+    display: grid; /* stage = 'Group Stage' ? 'display: none;' : 'display: grid;' */ 
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 40px 1fr;
     gap: 0 2em;
