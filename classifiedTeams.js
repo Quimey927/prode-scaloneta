@@ -31,14 +31,14 @@ module.exports = [
     alt: 'Bandera de Croacia',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Brasil',
+    src: '/img/banderas/brasil.png',
+    alt: 'Bandera de Brasil',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Corea del Sur',
+    src: '/img/banderas/corea-del-sur.png',
+    alt: 'Bandera de Corea del Sur',
   },
 
   {
@@ -72,14 +72,14 @@ module.exports = [
     alt: 'Bandera de España',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Portugal',
+    src: '/img/banderas/portugal.png',
+    alt: 'Bandera de Portugal',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Suiza',
+    src: '/img/banderas/suiza.png',
+    alt: 'Bandera de Suiza',
   },
 
   /* Cuartos */
