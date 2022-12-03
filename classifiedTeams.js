@@ -85,9 +85,9 @@ module.exports = [
   /* Cuartos */
 
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Países Bajos',
+    src: '/img/banderas/holanda.png',
+    alt: 'Bandera de Holanda',
   },
   {
     team: 'Sin definir',
