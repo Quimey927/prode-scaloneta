@@ -95,14 +95,14 @@ module.exports = [
     alt: 'Bandera de Argentina',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Croacia',
+    src: '/img/banderas/croacia.png',
+    alt: 'Bandera de Croacia',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Brasil',
+    src: '/img/banderas/brasil.png',
+    alt: 'Bandera de Brasil',
   },
 
   {
