@@ -116,14 +116,14 @@ module.exports = [
     alt: 'Bandera de Inglaterra',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Marruecos',
+    src: '/img/banderas/marruecos.png',
+    alt: 'Bandera de Marruecos',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Portugal',
+    src: '/img/banderas/portugal.png',
+    alt: 'Bandera de Portugal',
   },
 
   /* Semis */
