@@ -129,9 +129,9 @@ module.exports = [
   /* Semis */
 
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Argentina',
+    src: '/img/banderas/argentina.png',
+    alt: 'Bandera de Argentina',
   },
   {
     team: 'Croacia',
