@@ -134,9 +134,9 @@ module.exports = [
     alt: 'Bandera genérica',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Croacia',
+    src: '/img/banderas/croacia.png',
+    alt: 'Bandera de Croacia',
   },
 
   {
