@@ -140,14 +140,14 @@ module.exports = [
   },
 
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Francia',
+    src: '/img/banderas/francia.png',
+    alt: 'Bandera de Francia',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Marruecos',
+    src: '/img/banderas/marruecos.png',
+    alt: 'Bandera de Marruecos',
   },
 
   /* Final */
