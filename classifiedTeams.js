@@ -153,26 +153,26 @@ module.exports = [
   /* Final */
 
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Argentina',
+    src: '/img/banderas/argentina.png',
+    alt: 'Bandera de Argentina',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Francia',
+    src: '/img/banderas/francia.png',
+    alt: 'Bandera de Francia',
   },
 
   /* Tercer puesto */
 
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Croacia',
+    src: '/img/banderas/croacia.png',
+    alt: 'Bandera de Croacia',
   },
   {
-    team: 'Sin definir',
-    src: '/img/banderas/banderas.png',
-    alt: 'Bandera genérica',
+    team: 'Marruecos',
+    src: '/img/banderas/marruecos.png',
+    alt: 'Bandera de Marruecos',
   },
 ];
